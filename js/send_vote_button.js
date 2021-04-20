@@ -28,7 +28,7 @@ function addVoteListener(data) {
       if (count_checked > 0) {
         setCoolDown();
         console.log(ip);
-        fetch(path + "/php/send_vote.php", fetchParams({ file_name: data.name, options: options_checked, ip: ip }))
+        fetch(path + "php/send_vote.php", fetchParams({ file_name: data.name, options: options_checked, ip: ip }))
           .then((response) => response.text())
           .then((res) => {
             for (let i = 0; i < options_checked.length; i++) {
@@ -54,7 +54,7 @@ function addVoteListener(data) {
         }
       }
 
-      fetch(path + "/php/withdraw_vote.php", fetchParams({ file_name: data.name, options: options_checked, ip: ip }))
+      fetch(path + "php/withdraw_vote.php", fetchParams({ file_name: data.name, options: options_checked, ip: ip }))
         .then((response) => response.text())
         .then((res) => {
           for (let i = 0; i < options_checked.length; i++) {

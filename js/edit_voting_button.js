@@ -49,7 +49,7 @@ function addEditListener(data, password) {
 
       setCoolDown();
 
-      fetch(path + "/php/check_admin_passwd.php", fetchParams({ file_name: file_name, passwd: admin_password }))
+      fetch(path + "php/check_admin_passwd.php", fetchParams({ file_name: file_name, passwd: admin_password }))
         .then((response) => response.text())
         .then((res) => {
           if (res === "false") throwMessage("warning", "Hasło niepoprawne");
@@ -157,7 +157,7 @@ function addEditListener(data, password) {
 
               console.log(send_pack);
 
-              fetch(path + "/php/edit_voting.php", fetchParams(send_pack))
+              fetch(path + "php/edit_voting.php", fetchParams(send_pack))
                 .then((response) => response.json())
                 .then((data) => {
                   throwMessage("succes", "Pomyślnie edytowano głosowanie");

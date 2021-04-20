@@ -85,7 +85,7 @@ function fillVoting(data) {
 }
 
 async function showVoting(file_name, passwd, priv) {
-  fetch(path + "/php/open_voting.php", fetchParams({ file_name: file_name, passwd: passwd }))
+  fetch(path + "php/open_voting.php", fetchParams({ file_name: file_name, passwd: passwd }))
     .then((response) => response.json())
     .then((data) => {
       data.private = priv;

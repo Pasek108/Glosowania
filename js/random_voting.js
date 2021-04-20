@@ -1,7 +1,7 @@
 "use strict";
 
 async function getRandomVoting() {
-  fetch(path + "/php/random_voting.php", fetchParams())
+  fetch(path + "php/random_voting.php", fetchParams())
     .then((response) => response.text())
     .then((res) => openVoting(res));
 }

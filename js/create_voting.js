@@ -72,7 +72,7 @@ function sendVoting(e) {
     options: options,
   };
 
-  fetch(path + "/php/create_voting.php", fetchParams(send_data))
+  fetch(path + "php/create_voting.php", fetchParams(send_data))
     .then((response) => response.json())
     .then((data) => {
       const voting_name = data.name;

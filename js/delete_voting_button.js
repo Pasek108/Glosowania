@@ -49,7 +49,7 @@ function addDeleteListener(data) {
 
       setCoolDown();
 
-      fetch(path + "/php/check_admin_passwd.php", fetchParams({ file_name: file_name, passwd: password }))
+      fetch(path + "php/check_admin_passwd.php", fetchParams({ file_name: file_name, passwd: password }))
         .then((response) => response.text())
         .then((data) => {
           if (data === "false") throwMessage("warning", "Hasło niepoprawne");
@@ -68,7 +68,7 @@ function addDeleteListener(data) {
               localStorage.setItem("admin_passwords", new_passwords);
             }
 
-            fetch(path + "/php/set_voting_to_delete.php", fetchParams({ file_name: file_name, passwd: password }))
+            fetch(path + "php/set_voting_to_delete.php", fetchParams({ file_name: file_name, passwd: password }))
               .then((response) => response.text())
               .then((data) => openVoting(file_name));
           }
@@ -126,7 +126,7 @@ function addRestoreListener(data) {
 
       setCoolDown();
 
-      fetch(path + "/php/check_admin_passwd.php", fetchParams({ file_name: file_name, passwd: password }))
+      fetch(path + "php/check_admin_passwd.php", fetchParams({ file_name: file_name, passwd: password }))
         .then((response) => response.text())
         .then((data) => {
           if (data === "false") throwMessage("warning", "Hasło niepoprawne");
@@ -145,7 +145,7 @@ function addRestoreListener(data) {
               localStorage.setItem("admin_passwords", new_passwords);
             }
 
-            fetch(path + "/php/restore_voting.php", fetchParams({ file_name: file_name, passwd: password }))
+            fetch(path + "php/restore_voting.php", fetchParams({ file_name: file_name, passwd: password }))
               .then((response) => response.text())
               .then((data) => {
                 console.log(data);

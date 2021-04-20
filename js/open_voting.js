@@ -17,7 +17,7 @@ function openVoting(file_name = "") {
   let is_private = false;
   let password = "";
 
-  fetch(path + "/php/is_private.php", fetchParams({ file_name: file_name }))
+  fetch(path + "php/is_private.php", fetchParams({ file_name: file_name }))
     .then((response) => response.json())
     .then((data) => {
       if (data.is_private === "error") {
@@ -64,7 +64,7 @@ function openVoting(file_name = "") {
 
             setCoolDown();
 
-            fetch(path + "/php/check_passwd.php", fetchParams({ file_name: file_name, passwd: password }))
+            fetch(path + "php/check_passwd.php", fetchParams({ file_name: file_name, passwd: password }))
               .then((response) => response.text())
               .then((data) => {
                 if (data === "false") throwMessage("warning", "Hasło niepoprawne");
