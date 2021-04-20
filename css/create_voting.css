@@ -1,0 +1,117 @@
+.admin-password {
+  width: 20%;
+  padding: 0.5rem 0.6rem 0.3rem 0.6rem;
+  font-size: 1rem;
+  color: #252525;
+  border: 1px solid #a3a3a3;
+  border-radius: 0.2rem;
+}
+
+.date {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0.4rem 0.2rem 0.2rem 0.6rem;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  color: #252525;
+  border: 1px solid #a3a3a3;
+  border-radius: 0.2rem;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  margin-top: -0.1rem;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover {
+  cursor: pointer;
+}
+
+input[type="datetime-local"]:hover {
+  cursor: text;
+}
+
+.priv,
+.many-options {
+  padding: 0.5rem 0;
+  width: fit-content;
+  position: relative;
+}
+
+.priv:hover > *,
+.many-options:hover > * {
+  cursor: pointer;
+}
+
+.priv input:first-child,
+.many-options input {
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+  position: absolute;
+  top: 30%;
+}
+
+.priv label,
+.many-options label {
+  margin-left: 1.3rem;
+}
+
+.password {
+  padding: 0.21rem 0.3rem 0.19rem 0.3rem;
+  color: #252525;
+  border: 1px solid #a3a3a3;
+  border-radius: 0.2rem;
+  margin-left: 0.3rem;
+}
+
+.password:hover {
+  cursor: text;
+}
+
+.question-input {
+  width: calc(100% - 1.2rem);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
+  padding: 0.5rem 0.6rem 0.4rem 0.6rem;
+  font-weight: bold;
+  border: 1px solid #a3a3a3;
+  border-radius: 0.2rem;
+}
+
+.description-input {
+  width: calc(100% - 1.2rem);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem 0.6rem;
+  color: #252525;
+  border: 1px solid #a3a3a3;
+  border-radius: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.option-input {
+  width: 50%;
+  margin-right: 50%;
+  padding: 0.5rem 0.6rem 0.3rem 0.6rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #252525;
+  border: 1px solid #a3a3a3;
+  border-radius: 0.2rem;
+}
+
+.question-input:focus,
+.description-input:focus,
+.option-input:focus {
+  outline: none;
+}
+
+.add-option {
+  font-weight: bold;
+  color: #33bb11;
+  padding: 0.5rem 0;
+  width: fit-content;
+}
+
+.add-option:hover {
+  cursor: pointer;
+}

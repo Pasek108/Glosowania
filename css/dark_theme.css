@@ -1,0 +1,22 @@
+.header-dark {
+  background-color: #282d3c;
+  color: whitesmoke;
+  transition: 0.5s;
+}
+
+.main-dark {
+  background-color: #404040;
+  color: whitesmoke;
+  transition: 0.5s;
+}
+
+.voting .option-dark:hover {
+  background-color: #0054c2 !important;
+  transition: 0.1s;
+}
+
+.footer-dark {
+  background-color: #0f1113;
+  color: whitesmoke;
+  transition: 0.5s;
+}

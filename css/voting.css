@@ -1,0 +1,245 @@
+.voting-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-column-gap: 10px;
+}
+
+.voting-left {
+  display: inline-block;
+}
+
+.voting-right {
+  display: inline-block;
+  min-width: fit-content;
+}
+
+.voting-right button {
+  clear: both;
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+}
+
+.voting .question {
+  width: fit-content;
+  display: inline;
+}
+
+.voting .type {
+  font-size: 0.75rem;
+}
+
+.voting .copy-link {
+  color: #ff0000;
+  width: fit-content;
+}
+
+.voting .copy-link:hover {
+  cursor: pointer;
+}
+
+.voting .description {
+  margin: 1rem 0;
+}
+
+.voting .voting-term {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.voting .voting-option {
+  border: 1px solid;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  position: relative;
+  transition: 0.1s;
+}
+
+.voting .voting-option:hover {
+  color: whitesmoke;
+  cursor: pointer;
+  background-color: #1074f7;
+}
+
+.voting .voting-option > * {
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.voting label {
+  margin-left: 0.5rem;
+}
+
+.password-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.password-form h2 {
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
+
+.password-form .input-passwd {
+  margin-bottom: 1rem;
+}
+
+.password-form form div {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.password-form input {
+  padding: 0.45rem 2rem 0.25rem 0.8rem;
+  color: #252525;
+  border: 1px solid #a3a3a3;
+  border-radius: 0.2rem;
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.password-form input:focus {
+  outline: none;
+}
+
+.password-form input:required {
+  background-color: white;
+}
+
+.key {
+  padding: 0.5rem 0.4rem 0.4rem 0.4rem;
+  background-color: #ffffff;
+  color: #e9a003;
+  position: relative;
+  height: 1.1rem;
+  width: 1.1rem;
+  border: 1px solid #a3a3a3;
+  border-radius: 0.2rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  display: inline-block;
+  margin-right: -0.3rem;
+}
+
+.key:hover {
+  cursor: pointer;
+}
+
+.fa-key {
+  position: absolute;
+  left: 0.5rem;
+}
+
+.show-password {
+  color: #000;
+  padding: 0.5rem 0.4rem;
+  position: relative;
+  height: 1.1rem;
+  width: 1.1rem;
+  display: inline-block;
+  margin-left: -2rem;
+}
+
+.show-password {
+  cursor: pointer;
+}
+
+.show-password i {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.4rem;
+}
+
+.confirm-passwd {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.voting .navigation {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7rem;
+}
+
+.voting .navigation .arrow {
+  font-size: 1.8rem;
+  transition: 0.1s;
+}
+
+.voting .navigation .arrow:hover {
+  cursor: pointer;
+  color: #f8892e;
+}
+
+.voting .navigation .random {
+  margin: 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.voting .navigation .random div {
+  margin-top: -0.3rem;
+}
+
+.voting .percent {
+  border: 1px solid;
+  padding: 0.5rem 1rem;
+  margin-top: 0.3rem;
+  position: relative;
+  transition: 0.1s;
+  z-index: 1;
+  border-color: black;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  background-color: #00000033;
+}
+
+.voting .percent-dark {
+  border-color: white;
+}
+
+.voting .percent .background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: calc(100%);
+  background-color: #1074f7;
+  z-index: -1;
+}
+
+.voting .percent-dark .background {
+  background-color: #0054c2 !important;
+}
+
+.voting .percent .votes-number {
+  position: absolute;
+  right: 1rem;
+  top: 0.5rem;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.all-votes {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  width: 100%;
+  text-align: center;
+  color: #909090;
+}
+
+.password-cancel {
+  color: #ff0000;
+}
+
+.password-cancel:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

@@ -1,0 +1,92 @@
+.menu {
+  height: 100%;
+  width: 17rem;
+  position: absolute;
+  left: -17.05rem;
+  top: 0;
+  border: 1px solid black;
+  border-top: none;
+  background-color: #dfdfdf;
+  transition: 0.5s;
+  z-index: 2;
+  border-left: none;
+}
+
+.open-menu {
+  font-size: 1.8rem;
+  padding: 0.1rem 0.65rem 0.2rem 0.65rem;
+  position: absolute;
+  right: calc(-2.94rem - 1px);
+  border: 1px solid black;
+  border-top: none;
+  border-left: none;
+  background-color: #dfdfdf;
+  color: black;
+}
+
+.open-menu:hover {
+  cursor: pointer;
+}
+
+.menu-height {
+  height: 100%;
+  overflow: scroll;
+}
+
+.yours {
+  font-weight: bold;
+  padding: 0.68rem 1rem;
+  color: whitesmoke;
+  background-color: #2e4a62;
+}
+
+.observed {
+  font-weight: bold;
+  padding: 0.68rem 1rem;
+  color: whitesmoke;
+  background-color: #cd212a;
+  border-top: 1px solid black;
+}
+
+.menu ul {
+  padding: 0;
+  margin: 0;
+  color: black;
+}
+
+.menu-item {
+  padding: 0.68rem 1rem;
+  border-top: 1px solid black;
+  position: relative;
+}
+
+.voting-link {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 14rem;
+  transition: 0.1s;
+}
+
+.voting-link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.empty {
+  padding: 0.68rem 1rem;
+  border-top: 1px solid black;
+}
+
+.copy_icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0.68rem;
+  transition: 0.1s;
+}
+
+.copy_icon:hover {
+  cursor: pointer;
+  color: #0084f7;
+}

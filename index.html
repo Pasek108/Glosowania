@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="theme-color" content="#2c2c2c" />
+    <meta name="description" content="Strona do głosowań" />
+    <meta name="keywords" content="głosowanie,oddaj głos,ankieta" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Cache-control" content="public" />
+
+    <link rel="stylesheet" href="css/dark_theme.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/create_voting.css" />
+    <link rel="stylesheet" href="css/voting.css" />
+    <link rel="stylesheet" href="css/browse.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+
+    <title>Głosowania</title>
+  </head>
+
+  <body>
+    <header id="header">
+      <div class="left">
+        <div id="dropdown" class="options-dropdown">
+          Informacje
+          <i id="dropdown-icon" class="fas fa-caret-down"></i>
+        </div>
+        <div id="menu-options" class="menu-options">
+          <div id="browse" class="option">Przeglądaj</div>
+          <div id="contact" class="option">Kontakt</div>
+          <div id="help" class="option">Pomoc</div>
+        </div>
+      </div>
+
+      <div id="logo" class="logo">Głosowania</div>
+
+      <div class="right">
+        <div id="create-voting" class="create-voting">
+          <i class="fas fa-plus"></i>
+          <div class="text">Utwórz głosowanie</div>
+        </div>
+
+        <div class="theme">
+          <i id="light-mode" class="fas fa-sun"></i>
+
+          <div id="theme-slider" class="slider-off">
+            <div id="dot" class="dot"></div>
+          </div>
+
+          <i id="dark-mode" class="fas fa-moon"></i>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <div id="menu" class="menu">
+        <div id="open_menu" class="open-menu">
+          <i class="fas fa-bars"></i>
+        </div>
+
+        <div class="menu-height">
+          <div class="yours">
+            <div>Utworzone przez ciebie:</div>
+          </div>
+          <ul id="yours"></ul>
+
+          <div class="observed">
+            <div>Obserwowane:</div>
+          </div>
+          <ul id="observed"></ul>
+        </div>
+      </div>
+
+      <div id="content"></div>
+    </main>
+
+    <footer id="footer">Artur Pas 2021</footer>
+
+    <div id="info" class="info"></div>
+
+    <!-- Templatka informacji -->
+
+    <template id="message-template">
+      <div>
+        <div class="timer"></div>
+      </div>
+    </template>
+
+    <!-- Templatka linków menu bocznego do głosowań -->
+
+    <template id="menu-item-template">
+      <li class="menu-item">
+        <div id="voting-link" class="voting-link"></div>
+        <div class="copy_icon" title="Skopiuj link"><i class="far fa-copy"></i></div>
+      </li>
+    </template>
+
+    <!-- Templatka strony głównej -->
+
+    <template id="main-page-template">
+      <div>
+        <p class="text-center">Ta strona jest poświęcona głosowaniom, możesz uczestniczyć w stworzonych głosowaniach prywatnych (po podaniu hasła) lub publicznych.</p>
+        <p class="text-center">Możesz też stworzyc własne głosowanie klikając przycisk z + na górnym pasku.</p>
+        <br />
+        <p class="text-center">Kliknij poniższy przycisk aby wziąć udział w losowym głosowaniu publicznym lub skorzystaj z menu po lewej.</p>
+        <div id="random" class="random"><i id="cube" class="fas fa-dice-one"></i>Losuj</div>
+      </div>
+    </template>
+
+    <!-- Templatka tworzenia głosowania -->
+
+    <template id="create-voting-template">
+      <form id="create-voting-form">
+        <div class="priv">
+          <input id="priv" type="checkbox" />
+          <label for="priv">Głosowanie prywatne</label>
+        </div>
+
+        <input id="admin-password" class="admin-password" placeholder="Hasło administratora" pattern="[A-Za-z0-9AaĄąĆćĘęŁłŃńÓóŚśŹźŻż.,?\s]{1,20}" required />
+        <input id="date" class="date" type="datetime-local" title="Data wygaśnięcia głosowania" />
+
+        <textarea id="question-input" class="question-input" rows="1" placeholder="Pytanie" pattern="[A-Za-z0-9AaĄąĆćĘęŁłŃńÓóŚśŹźŻż.,?\s]{1,128}" required></textarea>
+        <textarea id="description-input" class="description-input" rows="2" placeholder="Opis" pattern="[A-Za-z0-9AaĄąĆćĘęŁłŃńÓóŚśŹźŻż.,?\s]"></textarea>
+
+        <div class="many-options">
+          <input id="many-options" type="checkbox" />
+          <label for="many-options">Pozwól zaznaczyć wiele opcji</label>
+        </div>
+
+        <div id="options_inputs">
+          <input class="option-input" placeholder="Wybór 1" pattern="[A-Za-z0-9AaĄąĆćĘęŁłŃńÓóŚśŹźŻż.,?\s]{1,48}" required />
+          <input class="option-input" placeholder="Wybór 2" pattern="[A-Za-z0-9AaĄąĆćĘęŁłŃńÓóŚśŹźŻż.,?\s]{0,48}" />
+          <input class="option-input" placeholder="Wybór 3" pattern="[A-Za-z0-9AaĄąĆćĘęŁłŃńÓóŚśŹźŻż.,?\s]{0,48}" />
+        </div>
+
+        <div id="add-option" class="add-option">
+          <i class="fas fa-plus-square"></i>
+          Dodaj opcje
+        </div>
+
+        <button id="add-voting" class="button button--ujarak button_green">Dodaj głosowanie</button>
+      </form>
+    </template>
+
+    <!-- Templatka podawania hasła -->
+
+    <template id="password-template">
+      <div id="password-form" class="password-form">
+        <h2 id="password-form-header">To głosowanie jest prywatne</h2>
+
+        <form id="input-passwd-form">
+          <div class="input-passwd">Podaj hasło:</div>
+
+          <div>
+            <label class="key" for="passwd"><i class="fas fa-key"></i></label>
+            <input id="passwd" type="password" placeholder="Hasło" pattern="[A-Za-z0-9AaĄąĆćĘęŁłŃńÓóŚśŹźŻż.,?s]{1,20}" required />
+            <label id="show-password" class="show-password" title="Pokaż hasło"><i id="show-password-icon" class="fas fa-eye"></i></label>
+          </div>
+
+          <div class="confirm-passwd">
+            <button id="confirm-passwd" class="button button--ujarak button_green">Potwierdź</button>
+          </div>
+        </form>
+      </div>
+    </template>
+
+    <!-- Templatka głosowania -->
+
+    <template id="voting-template">
+      <div class="voting">
+        <div class="voting-grid">
+          <div class="voting-left">
+            <h2 id="question" class="question"></h2>
+            <div id="type" class="type"></div>
+            <div id="description" class="description"></div>
+            <div id="copy-link" class="copy-link">Skopiuj link</div>
+          </div>
+
+          <div class="voting-right">
+            <button id="observe" class="button button--ujarak button_orange"><i id="observe-icon" class="far fa-bookmark"></i> Obserwuj</button>
+            <button id="edit" class="button button--ujarak button_blue"><i class="fas fa-edit"></i> Edytuj</button>
+            <button id="delete" class="button button--ujarak button_red"><i class="fas fa-trash-alt"></i> Usuń</button>
+          </div>
+        </div>
+
+        <div id="voting-term" class="voting-term"></div>
+        <form>
+          <div id="options" class="options"></div>
+          <div id="all-votes" class="all-votes"></div>
+          <button id="vote" class="button button-always green"><i class="fas fa-tasks"></i> Zagłosuj</button>
+        </form>
+
+        <div class="navigation">
+          <i id="prev" class="fas fa-arrow-left arrow" title="Poprzednie publiczne głosowanie"></i>
+          <div id="random" class="random">
+            <i id="cube" class="fas fa-dice-one"></i>
+            <div>Losuj</div>
+          </div>
+          <i id="next" class="fas fa-arrow-right arrow" title="Następne publiczne głosowanie"></i>
+        </div>
+      </div>
+    </template>
+
+    <!-- Templatka przeglądania -->
+
+    <template id="browse-template">
+      <div class="browse">
+        <div class="search">
+          <input placeholder="Wpisz szukany tekst" />
+          <button class="button button-always green"><i class="fas fa-search"></i> Szukaj</button>
+        </div>
+      </div>
+    </template>
+
+    <!-- Pliki js -->
+
+    <script src="js/helper_functions.js"></script>
+    <script src="js/random_voting.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/dropdown.js"></script>
+    <script src="js/show_voting.js"></script>
+    <script src="js/observe_voting_button.js"></script>
+    <script src="js/edit_voting_button.js"></script>
+    <script src="js/delete_voting_button.js"></script>
+    <script src="js/send_vote_button.js"></script>
+    <script src="js/change_theme.js"></script>
+    <script src="js/next_prev_buttons.js"></script>
+    <script src="js/create_voting.js"></script>
+    <script src="js/open_voting.js"></script>
+    <script src="js/browse.js"></script>
+  </body>
+</html>

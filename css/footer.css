@@ -1,0 +1,9 @@
+footer {
+  background-color: #615550;
+  color: white;
+  width: calc(100vw - 2rem);
+  float: left;
+  padding: 1rem;
+  text-align: center;
+  transition: 0.5s;
+}
