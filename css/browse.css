@@ -3,6 +3,7 @@
   justify-content: center;
   align-content: center;
   flex-direction: row;
+  margin-bottom: 2rem;
 }
 
 .search input {
@@ -18,4 +19,42 @@
 
 .search button {
   margin: 0;
+}
+
+.searched-votings {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.searched-votings .voting-link {
+  padding: 0.75rem 1rem;
+  border: 1px solid #a3a3a3;
+  border-radius: 0.2rem;
+  width: 80%;
+  margin-bottom: 1rem;
+}
+
+.searched-votings .voting-link:hover {
+  background-color: rgba(0, 140, 255, 0.11);
+}
+
+.searched-votings .voting-link h3 {
+  margin: 0;
+  margin-bottom: 0.3rem;
+}
+
+.searched-votings .voting-link p {
+  margin: 0;
+}
+
+.load-more {
+  text-align: center;
+  color: #1c86ff;
+}
+
+.load-more:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }

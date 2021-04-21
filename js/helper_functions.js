@@ -109,6 +109,7 @@ function timestampToStrings(timestamp) {
 }
 
 function evtWithCoolDown(evt, callback) {
+  evt.preventDefault();
   if (cooldown !== 0) {
     throwMessage("information", `Poczekaj ${cooldown}s`);
     return;

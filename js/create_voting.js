@@ -43,8 +43,6 @@ function addNewOptionListener() {
 }
 
 function sendVoting(e) {
-  e.preventDefault();
-
   const admin_password = document.getElementById("admin-password").value.trim();
 
   const date = document.getElementById("date").valueAsNumber;

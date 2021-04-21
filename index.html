@@ -105,10 +105,10 @@
 
     <template id="main-page-template">
       <div>
-        <p class="text-center">Ta strona jest poświęcona głosowaniom, możesz uczestniczyć w stworzonych głosowaniach prywatnych (po podaniu hasła) lub publicznych.</p>
-        <p class="text-center">Możesz też stworzyc własne głosowanie klikając przycisk z + na górnym pasku.</p>
+        <p class="text-center">Ta strona jest poświęcona głosowaniom, możesz uczestniczyć w głosowaniach prywatnych (po podaniu hasła) lub publicznych.</p>
+        <p class="text-center">Możesz utworzyć własne głosowanie klikając przycisk z <i class="fas fa-plus"></i> w nagłówku strony.</p>
         <br />
-        <p class="text-center">Kliknij poniższy przycisk aby wziąć udział w losowym głosowaniu publicznym lub skorzystaj z menu po lewej.</p>
+        <p class="text-center">Kliknij poniższy przycisk aby wziąć udział w losowym głosowaniu publicznym lub skorzystaj z <a id="go-to-browse" class="go-to-browse">przeglądarki głosowań publicznych</a>.</p>
         <div id="random" class="random"><i id="cube" class="fas fa-dice-one"></i>Losuj</div>
       </div>
     </template>
@@ -211,9 +211,15 @@
 
     <template id="browse-template">
       <div class="browse">
-        <div class="search">
-          <input placeholder="Wpisz szukany tekst" />
+        <form class="search">
+          <input id="search" placeholder="Wpisz szukany tekst" />
           <button class="button button-always green"><i class="fas fa-search"></i> Szukaj</button>
+        </form>
+        <div class="searched-votings" id="searched-votings">
+          <div class="voting-link">
+            <h3>Tytuł</h3>
+            <p>Opis</p>
+          </div>
         </div>
       </div>
     </template>

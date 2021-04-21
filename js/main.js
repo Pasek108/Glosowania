@@ -44,6 +44,9 @@ const path = href[0];
 const logo = document.getElementById("logo");
 logo.addEventListener("click", () => {
   copyTemplate("main-page-template");
+  const browse_link = document.getElementById("go-to-browse");
+  const browse = document.getElementById("browse");
+  browse_link.addEventListener("click", () => browse.click());
   randomHover();
 });
 

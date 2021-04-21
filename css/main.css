@@ -118,6 +118,16 @@ main {
   transition: 0.5s;
 }
 
+.go-to-browse {
+  color: #1c86ff;
+  text-decoration: none;
+}
+
+.go-to-browse:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .random {
   text-align: center;
   width: fit-content;
