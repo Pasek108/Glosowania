@@ -23,5 +23,8 @@ function randomHover() {
   const random = document.getElementById("random");
   random.addEventListener("mouseover", () => (interval = setInterval(changeCube, 500)));
   random.addEventListener("mouseout", () => clearInterval(interval));
-  random.addEventListener("click", (evt) => evtWithCoolDown(evt, getRandomVoting));
+  random.addEventListener("click", (evt) => {
+    evt.preventDefault();
+    evtWithCoolDown(evt, getRandomVoting);
+  });
 }

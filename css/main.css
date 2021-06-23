@@ -118,12 +118,12 @@ main {
   transition: 0.5s;
 }
 
-.go-to-browse {
+.main a {
   color: #1c86ff;
   text-decoration: none;
 }
 
-.go-to-browse:hover {
+.main a:hover {
   cursor: pointer;
   text-decoration: underline;
 }

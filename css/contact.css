@@ -1,0 +1,19 @@
+.contact h2 {
+  margin: 0;
+  margin-bottom: 2rem;
+}
+
+.contact textarea {
+  font-size: 1rem;
+  width: calc(100% - 1.6rem);
+  height: 18rem;
+  font-family: inherit;
+  padding: 0.5rem 0.6rem;
+  color: #252525;
+  border: 1px solid #a3a3a3;
+  border-radius: 0.2rem;
+}
+
+.contact textarea:focus {
+  outline: none;
+}

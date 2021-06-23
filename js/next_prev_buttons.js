@@ -7,7 +7,10 @@ function addArrowsListners(data) {
   if (prev_voting_name.length === 0) prev.style.color = "#a2a2a2";
   else {
     const openPrevVoting = () => openVoting(prev_voting_name);
-    prev_button.addEventListener("click", () => evtWithCoolDown(openPrevVoting));
+    prev_button.addEventListener("click", (evt) => {
+      evt.preventDefault();
+      evtWithCoolDown(evt, openPrevVoting);
+    });
   }
 
   const next_voting_name = data.next;
@@ -16,6 +19,9 @@ function addArrowsListners(data) {
   if (next_voting_name.length === 0) next.style.color = "#a2a2a2";
   else {
     const openNextVoting = () => openVoting(next_voting_name);
-    next_button.addEventListener("click", () => evtWithCoolDown(openNextVoting));
+    next_button.addEventListener("click", (evt) => {
+      evt.preventDefault();
+      evtWithCoolDown(evt, openNextVoting);
+    });
   }
 }

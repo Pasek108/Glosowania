@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/create_voting.css" />
     <link rel="stylesheet" href="css/voting.css" />
     <link rel="stylesheet" href="css/browse.css" />
+    <link rel="stylesheet" href="css/contact.css" />
     <link rel="stylesheet" href="css/footer.css" />
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
@@ -104,9 +105,12 @@
     <!-- Templatka strony głównej -->
 
     <template id="main-page-template">
-      <div>
+      <div class="main">
         <p class="text-center">Ta strona jest poświęcona głosowaniom, możesz uczestniczyć w głosowaniach prywatnych (po podaniu hasła) lub publicznych.</p>
         <p class="text-center">Możesz utworzyć własne głosowanie klikając przycisk z <i class="fas fa-plus"></i> w nagłówku strony.</p>
+        <br />
+        <p class="text-center">Jeśli czegoś nie wiesz zajrzyj do <a id="go-to-help" class="go-to-help">pomocy</a>.</p>
+        <p class="text-center">W przypadku gdy zauważysz błąd zgłoś to używając <a id="go-to-contact" class="go-to-contact">formy kontaktowej</a>.</p>
         <br />
         <p class="text-center">Kliknij poniższy przycisk aby wziąć udział w losowym głosowaniu publicznym lub skorzystaj z <a id="go-to-browse" class="go-to-browse">przeglądarki głosowań publicznych</a>.</p>
         <div id="random" class="random"><i id="cube" class="fas fa-dice-one"></i>Losuj</div>
@@ -224,6 +228,16 @@
       </div>
     </template>
 
+    <!-- Templatka kontaktu -->
+
+    <template id="contact-template">
+      <form class="contact">
+        <h2>Kontakt</h2>
+        <textarea placeholder="Opisz swój problem"></textarea>
+        <button class="button button-always green"><i class="fas fa-paper-plane"></i> Wyślij</button>
+      </form>
+    </template>
+
     <!-- Pliki js -->
 
     <script src="js/helper_functions.js"></script>
@@ -241,5 +255,6 @@
     <script src="js/create_voting.js"></script>
     <script src="js/open_voting.js"></script>
     <script src="js/browse.js"></script>
+    <script src="js/contact.js"></script>
   </body>
 </html>

@@ -53,16 +53,13 @@ function openVoting(file_name = "") {
           }
 
           const input_passwd_form = document.getElementById("input-passwd-form");
-          input_passwd_form.addEventListener("submit", (e) => {
-            e.preventDefault();
+          input_passwd_form.addEventListener("submit", (evt) => {
+            evt.preventDefault();
+            evtWithCoolDown(evt, check_passwd);
+          });
+
+          const check_passwd = (evt) => {
             password = passwd.value.trim();
-
-            if (cooldown !== 0) {
-              throwMessage("information", `Poczekaj ${cooldown}s`);
-              return;
-            }
-
-            setCoolDown();
 
             fetch(path + "php/check_passwd.php", fetchParams({ file_name: file_name, passwd: password }))
               .then((response) => response.text())
@@ -85,7 +82,7 @@ function openVoting(file_name = "") {
                   showVoting(file_name, password, is_private);
                 }
               });
-          });
+          };
         } else showVoting(file_name, password, is_private);
       }
     });

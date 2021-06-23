@@ -98,5 +98,8 @@ create_voting.addEventListener("click", () => {
   add_voting.addEventListener("click", (e) => {});
 
   const voting_form = document.getElementById("create-voting-form");
-  voting_form.addEventListener("submit", (evt) => evtWithCoolDown(evt, sendVoting));
+  voting_form.addEventListener("submit", (evt) => {
+    evt.preventDefault();
+    evtWithCoolDown(evt, sendVoting);
+  });
 });
