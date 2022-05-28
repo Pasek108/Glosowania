@@ -13,21 +13,6 @@ initLocalStrorageItem("passwords");
 initLocalStrorageItem("admin_passwords");
 initLocalStrorageItem("votes");
 
-async function getAdressIp() {
-  let cloudflare_trace = await fetch("https://www.cloudflare.com/cdn-cgi/trace");
-  cloudflare_trace = cloudflare_trace.text();
-
-  const ip = cloudflare_trace.then((text) => {
-    text = text.split("\n");
-    return text[2].slice(3, text[2].length);
-  });
-
-  return ip;
-}
-
-let ip = "";
-getAdressIp().then((value) => (ip = value));
-
 let cooldown = 0;
 
 function setCoolDown() {
@@ -40,6 +25,9 @@ function setCoolDown() {
 
 const href = window.location.href.split("?");
 const path = href[0];
+
+let ip = "";
+fetch(path + "php/get_ip.php").then((response) => response.text()).then((data) => {ip = data})
 
 const logo = document.getElementById("logo");
 logo.addEventListener("click", () => {

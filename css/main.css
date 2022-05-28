@@ -21,6 +21,10 @@ body {
   display: none;
 }
 
+.discaimer {
+  display: none;
+}
+
 .text-center {
   text-align: center;
 }

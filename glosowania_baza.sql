@@ -20,8 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Baza danych: `votings`
 --
-CREATE DATABASE IF NOT EXISTS `votings` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_polish_ci;
-USE `votings`;
+
 
 -- --------------------------------------------------------
 
@@ -46,10 +45,6 @@ CREATE TABLE `votings` (
 -- Zrzut danych tabeli `votings`
 --
 
-INSERT INTO `votings` (`id`, `name`, `question`, `passwd`, `admin_passwd`, `private`, `many_options`, `date`, `deleted`, `ip_list`) VALUES
-(1, 'fhs34irm9twajzm4n2y4', 'hjhjhjhj', 'd41d8cd98f00b204e9800998ecf8427e', 'ba984cb106d5bcead9bfe67344b89a2a', 0, 0, '', 0, ';Array;Array;Array;Array;;213.136.254.63'),
-(2, 'o9xa7prex7ik6qe00pcu', 'jkjkjkjkj', '9743a66f914cc249efca164485a19c5c', 'dfa5be2e7aabe71732a4a7a6e38f81d4', 1, 1, '1634455667800', 0, ''),
-(3, 'gwyabg69zewb3c1td9vx', 'Test%20dzia%C5%82ania%20tworzenia%20g%C5%82osowania', 'd41d8cd98f00b204e9800998ecf8427e', '21232f297a57a5a743894a0e4a801fc3', 0, 1, '1618794600000', 0, '');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -69,7 +64,7 @@ ALTER TABLE `votings`
 -- AUTO_INCREMENT dla tabeli `votings`
 --
 ALTER TABLE `votings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

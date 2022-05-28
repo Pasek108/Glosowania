@@ -68,7 +68,7 @@ fputs($file, $votes);
 fclose($file);
 
 $connection = new mysqli($servername, $username, $password, $dbname);
-$query = "INSERT INTO votings (id, name, question, passwd, admin_passwd, private, many_options, date, deleted) VALUES (NULL, '$file_name', '$question', '$passwd', '$admin_passwd', $priv, $many, '$date', 0)";
+$query = "INSERT INTO votings (id, name, question, passwd, admin_passwd, private, many_options, date, deleted, ip_list) VALUES (NULL, '$file_name', '$question', '$passwd', '$admin_passwd', $priv, $many, '$date', 0, '')";
 $connection->query($query);
 $connection->close();
 
